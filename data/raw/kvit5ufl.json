@@ -1,0 +1,17 @@
+{
+ "completion": false,
+ "condition": "pull_food",
+ "device": "Pixel XL",
+ "experiment": "eeg",
+ "participantId": "kvit5ufl",
+ "pull_food_session": {
+  "PID": {
+   "PID_01": {
+    "answer": "test",
+    "time": "02 Nov 2021 20:56:44"
+   }
+  }
+ },
+ "sensor_type": "linear",
+ "signed_up": "02 Nov 2021 20:56:13"
+}
