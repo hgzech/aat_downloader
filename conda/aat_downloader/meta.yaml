@@ -1,0 +1,36 @@
+package:
+  name: aat_downloader
+  version: 0.0.1
+source:
+  sha256: 3c102e751715814de69d868493d43db15e6a90d63466fcdee359cda6fbcc0bdf
+  url: https://files.pythonhosted.org/packages/b0/07/6d806a6d9182c1b7a54952401ecb448a4b9e3e8cb5c1fa20d748ee9c386e/aat_downloader-0.0.1.tar.gz
+about:
+  dev_url: https://hgzech.github.io
+  doc_url: https://hgzech.github.io
+  home: https://hgzech.github.io
+  license: Apache Software
+  license_family: APACHE
+  summary: A downloader for mobile aat data.
+build:
+  noarch: python
+  number: '0'
+  script: '{{ PYTHON }} -m pip install . -vv'
+extra:
+  recipe-maintainers:
+  - hgzech
+requirements:
+  host:
+  - pip
+  - python
+  - packaging
+  - pyrebase
+  - pandas
+  run:
+  - pip
+  - python
+  - packaging
+  - pyrebase
+  - pandas
+test:
+  imports:
+  - aat_downloader

@@ -52,25 +52,22 @@ class Downloader():
         pps = sorted(list(pps))
 
         for pp in pps:
-            #try:
-            path = os.path.join(storage_dir, "%s.json"%pp)
-            print("Syncing %s" %pp)
-            participant = dict(self.db.child(experiment).child("pps/%s" % (pp)).get().val())
-            participant['participantId'] = pp
-            participant['experiment'] = experiment
-            saveJson(participant, path)
-            #except:
-            #    print("There was a problem with participant %s"%pp)
+            try:
+                path = os.path.join(storage_dir, "%s.json"%pp)
+                print("Syncing %s" %pp)
+                participant = dict(self.db.child(experiment).child("pps/%s" % (pp)).get().val())
+                participant['participantId'] = pp
+                participant['experiment'] = experiment
+                saveJson(participant, path)
+            except:
+                print("There was a problem with participant %s"%pp)
 
 
     def delete_participants(self, experiment):
-        try:
-            input("Warning: Are you sure you want to delete participants of experiment: %s?\n"%experiment)
+        answer = input("Warning: Are you sure you want to delete participants of experiment: %s?\n"%experiment)
 
-            if answer.lower()[0] == 'y':
-                pps = sorted(list(self.db.child(experiment).child("pps").shallow().get().val()))
-                for pp in pps:
-                    #print(pp)
-                    self.db.child(experiment).child("pps/%s" % (pp)).remove()
-        except:
-            print("cound not delete %s"%experiment)
+        if answer.lower()[0] == 'y':
+            pps = sorted(list(self.db.child(experiment).child("pps").shallow().get().val()))
+            for pp in pps:
+                print("Deleting %s" %pp)
+                self.db.child(experiment).child("pps/%s" % (pp)).remove()
