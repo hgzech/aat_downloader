@@ -46,14 +46,20 @@ class Downloader():
         db = firebase.database()
         return db
 
-    def download(self, experiment, storage_dir):
+    def download(self, experiment, storage_dir, only_new_participants = False):
         print("Getting pps for: "+experiment)
         pps = self.db.child(experiment).child("pps").shallow().get().val()
         pps = sorted(list(pps))
 
         for pp in pps:
+
             try:
                 path = os.path.join(storage_dir, "%s.json"%pp)
+                if only_new_participants:
+                    # This is not working
+                    if os.path.isfile(path):
+                        print("Already downloaded %s" %pp)
+                        continue
                 print("Syncing %s" %pp)
                 participant = dict(self.db.child(experiment).child("pps/%s" % (pp)).get().val())
                 participant['participantId'] = pp

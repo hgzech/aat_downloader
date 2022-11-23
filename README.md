@@ -6,24 +6,11 @@
 
 `pip install aat_downloader`
 
-```python
-%R
-print(6)
-text = "text"
-```
-
-```python
-R('''
-print(6)
-text = "text"
-
-
-''')
-```
-
 ## How to use
 
-Fill me in please! Don't forget code examples:
+To use this package, first download the google-services.json file from the settings of your Firebase realtime database.
+
+### Downloading data
 
 ```python
 %load_ext autoreload
@@ -41,6 +28,9 @@ downloader = Downloader("data/external/google-services.json")
 # Specify experiment name and storage folder and download data
 downloader.download("eeg", "data/raw")
 ```
+
+### Deleting data
+To delete data run the following function (replace "fooddemo" with the experiment you want to delete).
 
 ```python
 downloader.delete_participants("fooddemo")

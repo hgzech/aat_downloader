@@ -1,9 +1,9 @@
 package:
   name: aat_downloader
-  version: 0.0.1
+  version: 0.0.2
 source:
-  sha256: 3c102e751715814de69d868493d43db15e6a90d63466fcdee359cda6fbcc0bdf
-  url: https://files.pythonhosted.org/packages/b0/07/6d806a6d9182c1b7a54952401ecb448a4b9e3e8cb5c1fa20d748ee9c386e/aat_downloader-0.0.1.tar.gz
+  sha256: 65a660cc5c5e4d4bda5d739fb36351117a2c54cd59f137f92366e7985a0511c6
+  url: https://files.pythonhosted.org/packages/95/80/d2fde04f80b94c5ec3c7863b87893e3319ec6110defaf9973e5602b5ffa1/aat_downloader-0.0.2.tar.gz
 about:
   dev_url: https://hgzech.github.io
   doc_url: https://hgzech.github.io
