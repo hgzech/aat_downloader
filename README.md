@@ -29,7 +29,7 @@ downloader.download("experiment", "data/raw")
 ```
 
 ### Deleting data
-To delete data run the following function (replace "fooddemo" with the experiment you want to delete).
+To delete data run the following function (replace "experiment" with the experiment you want to delete).
 
 ```python
 downloader.delete_participants("experiment")
