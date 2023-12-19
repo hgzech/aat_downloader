@@ -70,7 +70,7 @@ class Downloader():
 
 
     def delete_participants(self, experiment):
-        answer = input("Warning: Are you sure you want to delete participants of experiment: %s?\n"%experiment)
+        answer = 'y'#input("Warning: Are you sure you want to delete participants of experiment: %s?\n"%experiment)
 
         if answer.lower()[0] == 'y':
             pps = sorted(list(self.db.child(experiment).child("pps").shallow().get().val()))
