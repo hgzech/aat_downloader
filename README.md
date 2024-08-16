@@ -16,7 +16,7 @@ To download data run the lines below (replace "experiment" with the experiment y
 ```python
 from aat_downloader.downloader import Downloader
 # Initiate downloader with path to google services file (downloaded from Firebase)
-downloader = Downloader("data/external/google-services.json")
+downloader = Downloader("..data/external/google-services.json")
 ```
 
     The autoreload extension is already loaded. To reload it, use:
@@ -25,7 +25,7 @@ downloader = Downloader("data/external/google-services.json")
 
 ```python
 # Specify experiment name and storage folder and download data
-downloader.download("experiment", "data/raw")
+downloader.download("experiment", "..data/raw")
 ```
 
 ### Deleting data
